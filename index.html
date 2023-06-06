@@ -28,15 +28,51 @@
               <label for="author-input">Author</label>
               <input type="text" id="author-input" />
               <label for="read-input">Read?</label>
-              <input type="radio" id="read-input" />
+              <select name="read-input" id="read-input">
+                <option value="Finished">Finished</option>
+                <option value="Not Finished Yet">Not Finished Yet</option>
+                <option value="Not Started Yet">Not Started Yet</option>
+              </select>
             </li>
             <li>
-              <button type="submit">Add to myLibrary</button>
+              <button type="submit" id="add-new-book-btn">
+                Add to myLibrary
+              </button>
+              <button type="reset">Reset</button>
             </li>
           </ul>
         </form>
       </div>
-      <div class="bookshelf"></div>
+      <div class="bookshelf">
+        <div class="card">
+          <div class="book-info title-display">
+            <h3>Crime and Punishment</h3>
+          </div>
+          <div class="book-info author-display">
+            <h4>Fyodor Dostoyevsy</h4>
+          </div>
+          <div class="book-info read-display">
+            <h4>(Finished)</h4>
+          </div>
+          <div class="book-info card-btns">
+            <button>Remove</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="book-info title-display">
+            <h3>The Old Man and the Sea</h3>
+          </div>
+          <div class="book-info author-display">
+            <h4>Ernest Hemmingway</h4>
+          </div>
+          <div class="book-info read-display">
+            <h4>(Not Finished)</h4>
+          </div>
+          <div class="book-info card-btns">
+            <button>Remove</button>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>

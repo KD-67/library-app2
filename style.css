@@ -1,4 +1,12 @@
 :root {
+  --header-bgc: rgb(255, 207, 207);
+  --toolbar-bgc: rgb(191, 191, 255);
+  --bookshelf-bgc: rgb(192, 250, 192);
+  --card-bgc: white;
+  --header-btn-bgc: blue;
+  --toolbar-btn-bgc: blue;
+  --book-info-clr: rgb(210, 234, 242);
+  --shadow-clr: rgb(134, 134, 134);
 }
 
 body {
@@ -20,7 +28,7 @@ header {
   width: 100%;
   height: 10%;
   padding: 0 4%;
-  background-color: rgb(255, 207, 207);
+  background-color: var(--header-bgc);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -29,7 +37,7 @@ header {
 .toolbar {
   width: 100%;
   height: 10%;
-  background-color: rgb(191, 191, 255);
+  background-color: var(--toolbar-bgc);
   display: flex;
   align-items: center;
 }
@@ -47,5 +55,28 @@ header {
 .bookshelf {
   width: 100%;
   height: 80%;
-  background-color: rgb(192, 250, 192);
+  padding: 4%;
+  background-color: var(--bookshelf-bgc);
+  display: grid;
+  gap: 5%;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 300px;
+}
+.card {
+  border-radius: 6%;
+  background-color: var(--card-bgc);
+  box-shadow: 0 0 10px var(--shadow-clr);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, 1fr);
+  gap: 1%;
+}
+
+.book-info {
+  background-color: var(--book-info-clr);
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
