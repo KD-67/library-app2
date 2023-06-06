@@ -24,9 +24,9 @@
           <ul>
             <li>
               <label for="title-input">Title</label>
-              <input type="text" id="title-input" />
+              <input type="text" id="title-input" required />
               <label for="author-input">Author</label>
-              <input type="text" id="author-input" />
+              <input type="text" id="author-input" required />
               <label for="read-input">Read?</label>
               <select name="read-input" id="read-input">
                 <option value="Finished">Finished</option>
@@ -42,38 +42,7 @@
           </ul>
         </form>
       </div>
-      <div class="bookshelf">
-        <div class="card">
-          <div class="book-info title-display">
-            <h3>Crime and Punishment</h3>
-          </div>
-          <div class="book-info author-display">
-            <h4>Fyodor Dostoyevsy</h4>
-          </div>
-          <div class="book-info read-display">
-            <h4>(Finished)</h4>
-          </div>
-          <div class="book-info card-btns">
-            <button>Remove</button>
-            <button>Toggle Read</button>
-          </div>
-        </div>
-        <div class="card">
-          <div class="book-info title-display">
-            <h3>The Old Man and the Sea</h3>
-          </div>
-          <div class="book-info author-display">
-            <h4>Ernest Hemmingway</h4>
-          </div>
-          <div class="book-info read-display">
-            <h4>(Not Finished)</h4>
-          </div>
-          <div class="book-info card-btns">
-            <button>Remove</button>
-            <button>Toggle Read</button>
-          </div>
-        </div>
-      </div>
+      <div class="bookshelf"></div>
     </div>
   </body>
 </html>

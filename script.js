@@ -98,6 +98,10 @@ addNewBookBtn.addEventListener("click", function (event) {
   addBookToLibrary(newBook);
 
   displayMyLibrary();
+
+  titleInput.value = null;
+  authorInput.value = null;
+  readInput.value = "Finished";
 });
 
 // remove book from library
