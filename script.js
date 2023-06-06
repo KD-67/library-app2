@@ -10,7 +10,7 @@ let myLibrary = [];
 
 // creates new card on bookshelf, populates it with the proper divs,
 
-const createNewCard = (book) => {
+const createNewCard = (book, index) => {
   const newCard = document.createElement("div");
   const newBookInfo1 = document.createElement("div");
   const newBookInfo2 = document.createElement("div");
@@ -28,6 +28,12 @@ const createNewCard = (book) => {
   newBookInfo4.className = "book-info";
 
   newRmBtn.innerText = "Remove";
+  newRmBtn.setAttribute("data-index", index);
+  newRmBtn.addEventListener("click", () => {
+    const bookIndex = parseInt(newRmBtn.getAttribute("data-index"));
+    removeBook(bookIndex);
+  });
+
   newTitle.innerText = book.title;
   newAuthor.innerText = book.author;
   newRead.innerText = book.readStatus;
@@ -61,11 +67,9 @@ const addBookToLibrary = (newBook) => {
 // calls createNewCard, and populates it with the object properties
 
 const displayMyLibrary = () => {
-  console.log(myLibrary);
-
   bookshelf.innerHTML = "";
-  myLibrary.forEach((book) => {
-    createNewCard(book);
+  myLibrary.forEach((book, index) => {
+    createNewCard(book, index);
   });
 };
 
@@ -84,3 +88,10 @@ addNewBookBtn.addEventListener("click", function (event) {
 
   displayMyLibrary();
 });
+
+// remove book from library
+
+const removeBook = (index) => {
+  myLibrary.splice(index, 1);
+  displayMyLibrary();
+};
