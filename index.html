@@ -10,47 +10,33 @@
   </head>
   <body>
     <div class="container">
-      <div class="library-container">
-        <ul class="library-ul">
-          <li class="library-title">
-            <h1>My Library:</h1>
-          </li>
-          <li class="library-list">
-            <ol class="book-info-display-list"></ol>
-          </li>
-        </ul>
+      <header>
+        <div class="logo">
+          <h1>myLibrary App</h1>
+        </div>
+        <div class="btns">
+          <button>Sign Up</button>
+          <button>Log In</button>
+        </div>
+      </header>
+      <div class="toolbar">
+        <form action="">
+          <ul>
+            <li>
+              <label for="title-input">Title</label>
+              <input type="text" id="title-input" />
+              <label for="author-input">Author</label>
+              <input type="text" id="author-input" />
+              <label for="read-input">Read?</label>
+              <input type="radio" id="read-input" />
+            </li>
+            <li>
+              <button type="submit">Add to myLibrary</button>
+            </li>
+          </ul>
+        </form>
       </div>
-
-      <div class="add-book-container">
-        <ul class="add-book-ul">
-          <li class="add-book-title">
-            <h1>Add Book:</h1>
-          </li>
-          <li class="add-book-form-container">
-            <form action="" class="add-book-form">
-              <input
-                type="text"
-                class="title-input"
-                placeholder="Book Title"
-                required
-              />
-              <input
-                type="text"
-                class="author-input"
-                placeholder="Book Author"
-                required
-              />
-              <input
-                type="text"
-                class="finished-status-input"
-                placeholder="Finished / Unfinished"
-                required
-              />
-              <button type="submit">Add book</button>
-            </form>
-          </li>
-        </ul>
-      </div>
+      <div class="bookshelf"></div>
     </div>
   </body>
 </html>
