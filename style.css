@@ -7,6 +7,9 @@
   --toolbar-btn-bgc: blue;
   --book-info-clr: rgb(210, 234, 242);
   --shadow-clr: rgb(134, 134, 134);
+  --btn-text-clr: white;
+  --btn-bgc: rgb(138, 138, 246);
+  --btn-hover-bgc: rgb(98, 98, 244);
 }
 
 body {
@@ -22,6 +25,17 @@ body {
 
 ul {
   list-style: none;
+}
+
+button {
+  border: none;
+  border-radius: 5%;
+  color: var(--btn-text-clr);
+  background-color: var(--btn-bgc);
+}
+
+button:hover {
+  background-color: var(--btn-hover-bgc);
 }
 
 header {
@@ -79,4 +93,15 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.card-btns {
+  padding: 3%;
+  display: flex;
+  flex-direction: column;
+  gap: 5%;
+}
+
+.card-btns button {
+  flex: 1;
 }

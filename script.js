@@ -17,6 +17,7 @@ const createNewCard = (book, index) => {
   const newBookInfo3 = document.createElement("div");
   const newBookInfo4 = document.createElement("div");
   const newRmBtn = document.createElement("button");
+  const newTogBtn = document.createElement("button");
   const newTitle = document.createElement("h3");
   const newAuthor = document.createElement("h4");
   const newRead = document.createElement("h4");
@@ -25,13 +26,22 @@ const createNewCard = (book, index) => {
   newBookInfo1.className = "book-info";
   newBookInfo2.className = "book-info";
   newBookInfo3.className = "book-info";
-  newBookInfo4.className = "book-info";
+  newBookInfo4.className = "book-info card-btns";
 
   newRmBtn.innerText = "Remove";
   newRmBtn.setAttribute("data-index", index);
   newRmBtn.addEventListener("click", () => {
     const bookIndex = parseInt(newRmBtn.getAttribute("data-index"));
     removeBook(bookIndex);
+  });
+
+  newTogBtn.innerText = "Toggle Read";
+  newTogBtn.setAttribute("data-index", index);
+  newTogBtn.addEventListener("click", () => {
+    const bookIndex = parseInt(newTogBtn.getAttribute("data-index"));
+    const book = myLibrary[bookIndex];
+    toggleRead(book);
+    newRead.innerText = book.readStatus;
   });
 
   newTitle.innerText = book.title;
@@ -47,6 +57,7 @@ const createNewCard = (book, index) => {
   newBookInfo2.appendChild(newAuthor);
   newBookInfo3.appendChild(newRead);
   newBookInfo4.appendChild(newRmBtn);
+  newBookInfo4.appendChild(newTogBtn);
 };
 
 // new Book object constructor
@@ -94,4 +105,14 @@ addNewBookBtn.addEventListener("click", function (event) {
 const removeBook = (index) => {
   myLibrary.splice(index, 1);
   displayMyLibrary();
+};
+
+// toggle the readStatus on the Book's instance
+
+const toggleRead = (book) => {
+  if (book.readStatus === "Finished") {
+    book.readStatus = "Not Finished Yet";
+  } else if (book.readStatus === "Not Finished Yet") {
+    book.readStatus = "Finished";
+  }
 };
